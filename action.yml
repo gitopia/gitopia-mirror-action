@@ -23,7 +23,7 @@ inputs:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 runs:
   using:
-    composite
+    "composite"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
@@ -32,11 +32,11 @@ runs:
       shell: bash
     - name: Add Remote
       run: |
-      git remote add dgit ${{INPUT_REMOTURL}}
+        git remote add dgit ${{INPUT_REMOTEURL}}
       shell: bash
     - name: Push to Dgit
       run: |
-      git push dgit ${{INPUT_BRANCH}}
+        git push dgit ${{INPUT_BRANCH}}
       shell: bash
       env:
         DGIT_WALLET: ${{INPUT_DGITWALLET}}
