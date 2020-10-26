@@ -29,9 +29,12 @@ runs:
   steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - run: npm install -g @thetechtrap/git-remote-dgit@0.1.3
+      shell: bash
     - name: Add Remote
       run: git remote add $INPUT_REMOTE_URL
+      shell: bash
     - name: Push to Dgit
       run: git push dgit $INPUT_BRANCH
+      shell: bash
       env:
         DGIT_WALLET: $DGIT_WALLET
