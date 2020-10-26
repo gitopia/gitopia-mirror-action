@@ -1,0 +1,18 @@
+name: Action CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test action
+        uses: actions/@thetechtrap/dgit-action@master
+        # The action should not publish any real changes, but should succeed.
+        with:
+          dgit_wallet: "${{ secrets.GITHUB_TOKEN }}"
+          branch: "master"
+          remote_url: "dgit://7yFP2o906A3nDl5eCMtN4Ycs9m5otfRrJDAGoGKDoHk/dgit-action"
