@@ -18,6 +18,6 @@ jobs:
         uses: thetechtrap/dgit-action@main
         # The action should not publish any real changes, but should succeed.
         with:
-          dgit_wallet: "${{ secrets.GITHUB_TOKEN }}"
-          branch: "master"
+          dgit_wallet: "${{ secrets.DGIT_WALLET }}"
+          branch: "main"
           remote_url: "dgit://7yFP2o906A3nDl5eCMtN4Ycs9m5otfRrJDAGoGKDoHk/dgit-action"
