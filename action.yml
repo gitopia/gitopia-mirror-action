@@ -32,11 +32,11 @@ runs:
       shell: bash
     - name: Add Remote
       run: |
-        git remote add dgit ${{INPUT_REMOTEURL}}
+        git remote add dgit $INPUT_REMOTEURL
       shell: bash
     - name: Push to Dgit
       run: |
-        git push dgit ${{INPUT_BRANCH}}
+        git push dgit $INPUT_BRANCH
       shell: bash
       env:
-        DGIT_WALLET: ${{INPUT_DGITWALLET}}
+        DGIT_WALLET: ${{inputs.dgitWallet}}
