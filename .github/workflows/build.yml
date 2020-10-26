@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Test action
-        uses: thetechtrap/dgit-action@master
+        uses: thetechtrap/dgit-action@main
         # The action should not publish any real changes, but should succeed.
         with:
           dgit_wallet: "${{ secrets.GITHUB_TOKEN }}"
