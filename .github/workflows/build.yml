@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Test action
         uses: thetechtrap/dgit-action@main
         # The action should not publish any real changes, but should succeed.
