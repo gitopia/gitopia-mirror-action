@@ -2,7 +2,7 @@ name: Action CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
@@ -15,9 +15,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Test action
-        uses: thetechtrap/dgit-action@main
+        uses: thetechtrap/dgit-action@master
         # The action should not publish any real changes, but should succeed.
         with:
           dgitWallet: "${{ secrets.DGIT_WALLET }}"
-          branch: "main"
+          branch: "master"
           remoteUrl: "dgit://7yFP2o906A3nDl5eCMtN4Ycs9m5otfRrJDAGoGKDoHk/dgit-action"
