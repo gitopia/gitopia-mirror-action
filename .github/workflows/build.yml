@@ -10,7 +10,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - uses: actions/setup-node@v1
+          with:
+            node-version: 12
+            registry-url: https://registry.npmjs.org/
       - name: Test action
         uses: thetechtrap/dgit-action@main
         # The action should not publish any real changes, but should succeed.
