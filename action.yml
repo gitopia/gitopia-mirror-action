@@ -31,7 +31,7 @@ runs:
     - run: npm install -g @thetechtrap/git-remote-dgit@0.1.3
       shell: bash
     - name: Add Remote
-      run: git remote add $INPUT_REMOTE_URL
+      run: git remote add dgit $INPUT_REMOTE_URL
       shell: bash
     - name: Push to Dgit
       run: git push dgit $INPUT_BRANCH
