@@ -7,10 +7,10 @@ branding:
   icon: arrow-up-circle
   color: green
 inputs:
-  dgit_wallet:
+  dgitWallet:
     description: 'Dgit Wallet file contents. Can be passed in using $\{{ secrets.DGIT_WALLET }}'
     required: true
-  remote_url:
+  remoteUrl:
     description: "Dgit Respository remote Url, eg, dgit://wallet_address/repo_name"
     required: true
   branch:
@@ -31,10 +31,10 @@ runs:
     - run: npm install -g @thetechtrap/git-remote-dgit@0.1.3
       shell: bash
     - name: Add Remote
-      run: git remote add dgit ${{INPUT_REMOTE_URL}}
+      run: git remote add dgit ${{INPUT_REMOTURL}}
       shell: bash
     - name: Push to Dgit
       run: git push dgit ${{INPUT_BRANCH}}
       shell: bash
       env:
-        DGIT_WALLET: ${{DGIT_WALLET}}
+        DGIT_WALLET: ${{INPUT_DGITWALLET}}
