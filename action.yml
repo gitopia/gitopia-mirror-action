@@ -37,7 +37,7 @@ runs:
       shell: bash
     - name: Push to Gitopia
       run: |
-        git push gitopia ${{inputs.branch || "master"}}
+        git push gitopia ${GITHUB_REF}:${{inputs.branch}}
       shell: bash
       env:
         GITOPIA_WALLET: ${{inputs.gitopiaWallet}}
