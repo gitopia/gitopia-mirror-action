@@ -19,7 +19,7 @@ runs:
   using: "composite"
   steps:
     - name: Install git-remote-helper for Gitopia
-      run: npm install -g @gitopia/git-remote-gitopia@^0.1.5
+      run: npm install -g @gitopia/git-remote-gitopia@^0.1.6
       shell: bash
     - name: Add Remote
       run: |
