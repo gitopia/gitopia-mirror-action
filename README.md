@@ -34,6 +34,6 @@ Add Arweave Wallet contents to github secrets called `GITOPIA_WALLET`
 
 Update values of
 
-- `gitopiaWallet`: your wallet file pointing to the secret containg your wallet,
-- `branch`: the branch to Gitopia your want to push (optional),
-- `remoteUrl`: your repository remote url created from https://gitopia.org
+- `gitopiaWallet`: Your wallet file saved as a Github secret,
+- `branch`: The branch you want to push in Gitopia (optional, default:'master'),
+- `remoteUrl`: Your Gitopia repository remote_url created from https://gitopia.org

@@ -14,9 +14,8 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - name: Test action
+      - name: Gitopia Mirror Action
         uses: gitopia/gitopia-mirror-action@master
-        # The action should not publish any real changes, but should succeed.
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
           branch: "master"
