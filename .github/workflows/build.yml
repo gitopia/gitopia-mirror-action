@@ -20,4 +20,4 @@ jobs:
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
           branch: "master"
-          remoteUrl: "gitopis://jf9rQRuE_TnKi5stRHbGk8pjtVKQ_0ikFs8tfYyZLMs/gitopia-mirror-action"
+          remoteUrl: "gitopia://jf9rQRuE_TnKi5stRHbGk8pjtVKQ_0ikFs8tfYyZLMs/gitopia-mirror-action"
