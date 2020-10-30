@@ -1,17 +1,17 @@
 # This is a basic workflow to help you get started with Actions
 
-name: "Dgit Mirror Action"
-description: "Pushes your github repo to Dgit"
-author: "thetechtrap"
+name: "Gitopia Mirror Action"
+description: "Pushes your github repo to Gitopia"
+author: "Gitopia"
 branding:
   icon: arrow-up-circle
   color: green
 inputs:
-  dgitWallet:
-    description: 'Dgit Wallet file contents. Can be passed in using $\{{ secrets.DGIT_WALLET }}'
+  gitopiaWallet:
+    description: 'Gitopia Wallet file contents. Can be passed in using $\{{ secrets.GITOPIA_WALLET }}'
     required: true
   remoteUrl:
-    description: "Dgit Respository remote Url, eg, dgit://wallet_address/repo_name"
+    description: "Gitopia Respository remote Url, eg, gitopia://wallet_address/repo_name"
     required: true
   branch:
     description: "Destination branch to push changes"
@@ -28,15 +28,16 @@ runs:
     # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - run: npm install -g @thetechtrap/git-remote-dgit@^0.1.3
+    - name: Install git-remote-helper for Gitopia
+      run: npm install -g @gitopia/git-remote-gitopia@^0.1.4
       shell: bash
     - name: Add Remote
       run: |
-        git remote add dgit ${{inputs.remoteUrl}}
+        git remote add gitopia ${{inputs.remoteUrl}}
       shell: bash
-    - name: Push to Dgit
+    - name: Push to Gitopia
       run: |
-        git push dgit ${{inputs.branch}}
+        git push gitopia ${{inputs.branch || "master"}}
       shell: bash
       env:
-        DGIT_WALLET: ${{inputs.dgitWallet}}
+        GITOPIA_WALLET: ${{inputs.gitopiaWallet}}

@@ -1,4 +1,4 @@
-name: Action CI
+name: Mirror to Gitopia
 
 on:
   push:
@@ -15,9 +15,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Test action
-        uses: thetechtrap/dgit-action@master
+        uses: gitopia/gitopia-mirror-action@master
         # The action should not publish any real changes, but should succeed.
         with:
-          dgitWallet: "${{ secrets.DGIT_WALLET }}"
+          gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
           branch: "master"
-          remoteUrl: "dgit://7yFP2o906A3nDl5eCMtN4Ycs9m5otfRrJDAGoGKDoHk/dgit-action"
+          remoteUrl: "gitopis://jf9rQRuE_TnKi5stRHbGk8pjtVKQ_0ikFs8tfYyZLMs/gitopia-mirror-action"
