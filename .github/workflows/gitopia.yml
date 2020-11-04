@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -19,4 +21,4 @@ jobs:
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
           branch: "master"
-          remoteUrl: "gitopia://jf9rQRuE_TnKi5stRHbGk8pjtVKQ_0ikFs8tfYyZLMs/gitopia-mirror-action"
+          remoteUrl: "gitopia://z_TqsbmVJOKzpuQH4YrYXv_Q0DrkwDwc0UqapRrE0Do/gitopia-mirror-action"
