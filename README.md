@@ -1,6 +1,6 @@
 # Gitopia Mirror Action
 
-[![Gitopia](https://img.shields.io/endpoint?style=&url=https://gitopia.org/mirror-badge.json)](https://gitopia.org/#/address/gitopia)
+[![Gitopia](https://img.shields.io/endpoint?style=&url=https://gitopia.org/mirror-badge.json)](https://gitopia.org/#/z_TqsbmVJOKzpuQH4YrYXv_Q0DrkwDwc0UqapRrE0Do/gitopia-mirror-action)
 
 Github action to mirror your Github repos to Gitopia
 
@@ -26,7 +26,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: Test action
-        uses: gitopia/gitopia-mirror-action@v0.1.1
+        uses: gitopia/gitopia-mirror-action@v0.1.2
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
           branch: "master"
