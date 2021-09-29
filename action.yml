@@ -1,5 +1,5 @@
 name: "Gitopia Mirror Action"
-description: "Pushes your github repo to Gitopia"
+description: "Mirrors your GitHub repo on Gitopia"
 author: "Gitopia"
 branding:
   icon: arrow-up-circle
@@ -9,7 +9,7 @@ inputs:
     description: 'Gitopia Wallet file contents. Can be passed in using $\{{ secrets.GITOPIA_WALLET }}'
     required: true
   remoteUrl:
-    description: "Gitopia Respository remote Url, eg, gitopia://wallet_address/repo_name"
+    description: "Gitopia Respository remote Url, eg, gitopia://address/repo_name"
     required: true
   branch:
     description: "Destination branch to push changes"
@@ -19,7 +19,7 @@ runs:
   using: "composite"
   steps:
     - name: Install git-remote-helper for Gitopia
-      run: npm install -g @gitopia/git-remote-gitopia@^0.1.7
+      run: curl https://get.gitopia.com | bash
       shell: bash
     - name: Add Remote
       run: |

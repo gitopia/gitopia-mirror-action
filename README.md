@@ -1,8 +1,6 @@
 # Gitopia Mirror Action
 
-[![Gitopia](https://img.shields.io/endpoint?style=&url=https://gitopia.org/mirror-badge.json)](https://gitopia.org/#/z_TqsbmVJOKzpuQH4YrYXv_Q0DrkwDwc0UqapRrE0Do/gitopia-mirror-action)
-
-Github action to mirror your Github repos to Gitopia
+GitHub action to mirror your GitHub repos on Gitopia
 
 Use it as the following gitopia-mirror.yml
 
@@ -21,23 +19,19 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - name: Test action
-        uses: gitopia/gitopia-mirror-action@v0.1.2
+      - name: Push to Gitopia mirror
+        uses: gitopia/gitopia-mirror-action@v0.3.0
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
           branch: "master"
-          remoteUrl: "gitopia://z_TqsbmVJOKzpuQH4YrYXv_Q0DrkwDwc0UqapRrE0Do/gitopia-mirror-action"
+          remoteUrl: "gitopia://gitopia10j4ryjjna69hvsrahgvhwjv3dd46tt6xuprguq/gitopia-mirror-action"
 
 ```
 
-Add Arweave Wallet contents to github secrets called `GITOPIA_WALLET`
+Add Gitopia wallet contents to GitHub secrets called `GITOPIA_WALLET`
 
 Update values of
 
-- `gitopiaWallet`: Your wallet file saved as a Github secret,
+- `gitopiaWallet`: Your wallet file saved as a GitHub secret,
 - `branch`: The branch you want to push in Gitopia (optional, default:'master'),
-- `remoteUrl`: Your Gitopia repository remote_url created from https://gitopia.org
+- `remoteUrl`: Your Gitopia repository remote_url created from https://gitopia.com
