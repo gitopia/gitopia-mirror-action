@@ -9,7 +9,8 @@ name: Mirror to Gitopia
 
 on:
   push:
-    branches: [master]
+    branches:
+      - '**'
 
 jobs:
   build:
