@@ -11,10 +11,6 @@ inputs:
   remoteUrl:
     description: "Gitopia Respository remote Url, eg, gitopia://address/repo_name"
     required: true
-  branch:
-    description: "Destination branch to push changes"
-    required: false
-    default: "master"
 runs:
   using: "composite"
   steps:
@@ -27,7 +23,7 @@ runs:
       shell: bash
     - name: Push to Gitopia
       run: |
-        git push gitopia ${GITHUB_REF}:${{inputs.branch}} --force
+        git push gitopia ${GITHUB_REF} --force
       shell: bash
       env:
         GITOPIA_WALLET: ${{inputs.gitopiaWallet}}

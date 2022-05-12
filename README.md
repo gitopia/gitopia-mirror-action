@@ -20,10 +20,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Push to Gitopia mirror
-        uses: gitopia/gitopia-mirror-action@v0.3.0
+        uses: gitopia/gitopia-mirror-action@v0.4.0
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
-          branch: "master"
           remoteUrl: "gitopia://gitopia10j4ryjjna69hvsrahgvhwjv3dd46tt6xuprguq/gitopia-mirror-action"
 
 ```
@@ -33,5 +32,4 @@ Add Gitopia wallet contents to GitHub secrets called `GITOPIA_WALLET`
 Update values of
 
 - `gitopiaWallet`: Your wallet file saved as a GitHub secret,
-- `branch`: The branch you want to push in Gitopia (optional, default:'master'),
 - `remoteUrl`: Your Gitopia repository remote_url created from https://gitopia.com
