@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Push to Gitopia mirror
-        uses: gitopia/gitopia-mirror-action@v0.4.0
+        uses: gitopia/gitopia-mirror-action@v0.5.0
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
           remoteUrl: "gitopia://gitopia10j4ryjjna69hvsrahgvhwjv3dd46tt6xuprguq/gitopia-mirror-action"
