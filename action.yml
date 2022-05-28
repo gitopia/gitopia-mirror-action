@@ -11,6 +11,10 @@ inputs:
   remoteUrl:
     description: "Gitopia Respository remote Url, eg, gitopia://address/repo_name"
     required: true
+  force:
+    description: 'Force push to gitopia remote repository'
+    required: false
+    type: boolean
 runs:
   using: "composite"
   steps:
@@ -22,6 +26,14 @@ runs:
         git remote add gitopia ${{inputs.remoteUrl}}
       shell: bash
     - name: Push to Gitopia
+      if: ${{ !inputs.force }}
+      run: |
+        git push gitopia ${GITHUB_REF}
+      shell: bash
+      env:
+        GITOPIA_WALLET: ${{inputs.gitopiaWallet}}
+    - name: Push to Gitopia
+      if: ${{ inputs.force }}
       run: |
         git push gitopia ${GITHUB_REF} --force
       shell: bash
