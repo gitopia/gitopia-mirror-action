@@ -13,8 +13,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Gitopia Mirror Action
-        uses: gitopia/gitopia-mirror-action@v0.3.0
+        uses: gitopia/gitopia-mirror-action@v0.5.0
         with:
           gitopiaWallet: "${{ secrets.GITOPIA_WALLET }}"
-          branch: "master"
-          remoteUrl: "gitopia://gitopia10j4ryjjna69hvsrahgvhwjv3dd46tt6xuprguq/gitopia-mirror-action"
+          remoteUrl: "gitopia://gitopia1dlpc7ps63kj5v0kn5v8eq9sn2n8v8r5z9jmwff/gitopia-mirror-action"
