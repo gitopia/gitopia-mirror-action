@@ -30,7 +30,8 @@ jobs:
 
 Add Gitopia wallet contents to GitHub secrets called `GITOPIA_WALLET`
 
-Update values of
+## Input details
 
 - `gitopiaWallet`: Your wallet file saved as a GitHub secret,
 - `remoteUrl`: Your Gitopia repository remote_url created from https://gitopia.com
+- `force` (optional): true/false, Force push to gitopia remote repository? Default is false, setting this to true will allow the mirror action to overwrite your gitopia remote repository. The changes done directly in your gitopia remote repository will be overwritten.
